@@ -13,10 +13,12 @@ app.use(express.json());
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 
-mongoose.connect("mongodb+srv://ceit58vignesh24:CyHTbk8lOIyZf8IS@cluster0.p9myl.mongodb.net/mernProfile?retryWrites=true&w=majority&appName=Cluster0")
-  .then(() => console.log('MongoDB connected'))
-  .catch(err => console.log('MongoDB connection error:', err));
 
+mongoose.connect("mongodb+srv://ceit58vignesh24:mwxh0D9zoHXHGJEr@cluster0.0o66i.mongodb.net/passkey?retryWrites=true&w=majority&appName=Cluster0").then(function () {
+    console.log("Connected to db")
+}).catch(function () {
+    console.log("Failed")
+})
 app.use('/api/users', userRoutes);
 
 app.listen(5000, () => console.log(`Server is running..`));
